@@ -1,7 +1,7 @@
 name: Build Android APK
 on:
   push:
-    branches: [ main ] # Change this if your branch name is 'master'
+    branches: [main] # Change this if your branch name is 'master'
   workflow_dispatch: # This lets you trigger the build manually from GitHub
 
 jobs:
@@ -14,14 +14,14 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
-          java-version: '17' # Matches Capacitor 8 requirements
+          distribution: "temurin"
+          java-version: "21" # Matches Capacitor 8 requirements
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
-          cache: 'npm'
+          node-version: "22"
+          cache: "npm"
 
       - name: Install Dependencies
         run: npm ci # Uses your package-lock.json for a clean install
@@ -36,7 +36,7 @@ jobs:
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug -Dorg.gradle.java.home=$JAVA_HOME
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
