@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">smartvoicealarm</string>
+    <string name="title_activity_main">smartvoicealarm</string>
+    <string name="package_name">com.vivekacharya.smartvoicealarm</string>
+    <string name="custom_url_scheme">com.vivekacharya.smartvoicealarm</string>
+</resources>
