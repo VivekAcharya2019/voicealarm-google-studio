@@ -1,0 +1,5 @@
+{
+  "name": "Smart Alarm Clock",
+  "description": "Modern Android-style alarm clock with Text-to-Speech announcements, repeat options, and Material UI.",
+  "requestFramePermissions": ["notifications"]
+}
